@@ -6,5 +6,17 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-    
+    <ion-slides [options]="swipeOpts">
+      <ion-slide>
+        <ion-button 
+          expand="full" 
+          (click)="scaner()"
+          fill="outline"
+          size="large"
+          shape="round"
+        >
+          Escanear QR
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
 </ion-content>
