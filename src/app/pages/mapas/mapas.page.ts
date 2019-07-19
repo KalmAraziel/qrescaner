@@ -31,14 +31,19 @@ export class MapasPage implements OnInit, AfterViewInit {
     mapboxgl.accessToken = 'pk.eyJ1Ijoia2FsbWFyYXppZWwiLCJhIjoiY2p5NHZzZHI0MDE1MTNob2FuNGU2bnZwZyJ9.GiGOsPutwPuMMLnGnYTsWQ';
     const map = new mapboxgl.Map({
       style: 'mapbox://styles/mapbox/light-v10',
-      center: [-74.0066, 40.7135],
+      center: [this.lng, this.lat],
       zoom: 15.5,
       pitch: 45,
       bearing: -17.6,
       container: 'map'
     });
 
-    map.on('load', function() {
+    map.on('load', () => {
+      map.resize();
+      // marker
+      new mapboxgl.Marker({draggable: false})
+        .setLngLat([this.lng, this.lat])
+        .addTo(map);
 
       const layers = map.getStyle().layers;
       let labelLayerId: any;
