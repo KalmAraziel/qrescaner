@@ -13,6 +13,7 @@ export class Tab2Page {
 
   enviarCorreo() {
     console.log('Enviar Correo ...');
+    this.dataLocal.enviarCorreo();
   }
 
   abrirRegistro(registro: Registro) {
