@@ -100,6 +100,7 @@ export class DataLocalService {
         };
         this.email.open(email);
       }
+
      });
   }
 }
